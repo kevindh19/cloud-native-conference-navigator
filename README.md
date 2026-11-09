@@ -14,7 +14,7 @@ This repository is the project starting point. The application and its local set
 - Use Elasticsearch for the conference search data.
 - Add observability with Dash0 and pull request review with Gitar.
 
-The deployment design, including whether Kubernetes and Radar are in scope, is still open.
+The planned deployment is Vercel. Radar is out of scope for this version.
 
 ## Data and privacy
 
