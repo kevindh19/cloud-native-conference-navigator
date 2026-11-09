@@ -1,6 +1,6 @@
 # Cloud Native Conference Navigator
 
-An open-source hackathon project to help conference attendees find talks, exhibitors, and accessible routes. The project also aims to help organizers show where and when activities occur.
+A public hackathon project to help conference attendees find talks, exhibitors, and accessible routes. The project also aims to help organizers show where and when activities occur.
 
 ## Status
 
