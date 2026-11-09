@@ -1,0 +1,173 @@
+.page {
+  min-height: 100vh;
+  max-width: none;
+  margin: 0;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  background: #f5f7f4;
+  color: #102c2c;
+}
+
+.shell {
+  max-width: 74rem;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  color: #12685d;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.back:hover,
+.detail a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.eyebrow,
+.label {
+  color: #12685d;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  margin: 0.4rem 0 0.75rem;
+}
+
+.header > p:last-child {
+  margin: 0;
+  color: #4b625e;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(15rem, 20rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.roomList,
+.detail {
+  border: 1px solid #cbd9d2;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 12px 32px #14372a0d;
+}
+
+.roomList {
+  padding: 1.25rem;
+}
+
+.roomList h2 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+.roomList ul {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.roomList a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.65rem;
+  color: #183b34;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.roomList a:hover,
+.roomList .active {
+  background: #e7f4eb;
+}
+
+.roomLevel {
+  flex: none;
+  color: #4b625e;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.detail {
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.detail h2 {
+  margin: 0.3rem 0 1rem;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.detail > p:not(.label) {
+  max-width: 44rem;
+  margin-top: 0;
+}
+
+.mapLink {
+  display: inline-block;
+  margin: 1rem 0 2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.65rem;
+  background: #0e6557;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.accessNote {
+  max-width: 46rem;
+  padding: 1.25rem;
+  border-left: 4px solid #b76d20;
+  border-radius: 0.4rem;
+  background: #fff7eb;
+}
+
+.accessNote h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.accessNote p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.accessNote a {
+  color: #0d6255;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .roomList ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roomList a {
+    display: grid;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .roomList ul {
+    grid-template-columns: 1fr;
+  }
+}
