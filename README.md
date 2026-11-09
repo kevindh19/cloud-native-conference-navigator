@@ -4,20 +4,28 @@ A public hackathon project to help conference attendees find talks, exhibitors, 
 
 ## Status
 
-This repository has a minimal Next.js app for the first deployment. Search, routes, and service connections are not implemented yet.
+The app has an Elasticsearch-backed session finder with keyword and meaning search. It contains eight public sessions from the official schedule. Each result links to the room guide. Step-free routes are not implemented or verified.
 
 ## Local setup
 
 1. Install Node.js 20.9 or newer.
 2. Run `npm ci`.
-3. Run `npm run dev`.
-4. Open `http://localhost:3000`.
+3. Set `ELASTICSEARCH_URL` and `ELASTICSEARCH_API_KEY` in a local `.env` file. Use an API key with `read` access to `conference-sessions-v1` only. See `.env.example` for the variable names.
+4. Run `npm run dev` and open `http://localhost:3000`.
 
-The `/api/health` endpoint returns a small JSON response for deployment checks. No credentials are needed for this first build.
+The `/api/health` endpoint returns a small JSON response for deployment checks. The search route uses the key only on the server. Do not put the key in a `NEXT_PUBLIC_` variable or commit it.
+
+## Search data
+
+`data/sessions.json` contains a small sample of Tuesday sessions at the Salt Palace. Each entry has a stable ID and a link to the [official schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/). Titles, speakers, times, and rooms came from that schedule. Summaries are short paraphrases. The data is partial and can change. Confirm details in the official schedule.
+
+To create the `conference-sessions-v1` index and load the sample, run `node scripts/seed-elastic.mjs` with a temporary key that can create this index and write to it. Replace that key with the index's read-only key before running the app. The script uses fixed document IDs and can run again without making duplicate documents. The index includes a `semantic_text` field that uses Elastic's default inference endpoint. The app offers a keyword query and a meaning query against that field.
+
+The sample marks each step-free route as unverified. The app does not give navigation instructions. Do not treat a room label as a verified accessible route.
 
 ## Planned demo
 
-- Search conference sessions and places.
+- Search conference sessions.
 - Show a route that avoids stairs when required.
 - Give a text route that works with screen readers and Braille displays.
 - Use Elasticsearch for the conference search data.
