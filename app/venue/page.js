@@ -111,8 +111,11 @@ export default async function VenuePage({ searchParams }) {
             <div className={styles.accessNote}>
               <h3>Step-free route status</h3>
               <p>
-                A step-free route to this room is not verified. The map marks elevators,
-                but it does not give a complete route from each entrance.
+                {selectedRoom
+                  ? `A step-free route to ${selectedRoom.name} is not verified.`
+                  : 'Step-free routes to these rooms are not verified.'}{' '}
+                The map marks elevators, but it does not give a complete route from each
+                entrance.
               </p>
               <p>
                 For elevator help, ask event staff at registration or an information desk.
