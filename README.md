@@ -4,7 +4,16 @@ A public hackathon project to help conference attendees find talks, exhibitors, 
 
 ## Status
 
-This repository is the project starting point. The application and its local setup steps are not implemented yet.
+This repository has a minimal Next.js app for the first deployment. Search, routes, and service connections are not implemented yet.
+
+## Local setup
+
+1. Install Node.js 20.9 or newer.
+2. Run `npm ci`.
+3. Run `npm run dev`.
+4. Open `http://localhost:3000`.
+
+The `/api/health` endpoint returns a small JSON response for deployment checks. No credentials are needed for this first build.
 
 ## Planned demo
 
